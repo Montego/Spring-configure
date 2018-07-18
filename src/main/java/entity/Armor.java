@@ -9,7 +9,7 @@ public class Armor extends AbstractEntity {
     @Column(nullable = false)
     private String name;
 
-    @Column
+    @Column(nullable = false)
     private int defense;
 
     @Enumerated(EnumType.STRING)

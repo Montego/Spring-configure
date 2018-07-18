@@ -7,10 +7,10 @@ import javax.persistence.Table;
 @Entity
 @Table
 public class AttributeSet extends AbstractEntity {
-    @Column
+    @Column(nullable = false)
     private int attack;
-    @Column
+    @Column (nullable = false)
     private int defence;
-    @Column
+    @Column(nullable = false)
     private int nonDamageChance;
 }
