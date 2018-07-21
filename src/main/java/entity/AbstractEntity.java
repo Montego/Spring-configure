@@ -6,4 +6,5 @@ import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class AbstractEntity extends AbstractPersistable<Long>{
+
 }

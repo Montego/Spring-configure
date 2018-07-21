@@ -2,6 +2,7 @@ package entity;
 
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "users")
@@ -16,6 +17,9 @@ public class User extends AbstractEntity {
     @ManyToOne
     private Authority role;
 
+    @Column
+    private Timestamp registrated;
+
     public String getLogin() {
         return login;
     }
@@ -23,8 +27,6 @@ public class User extends AbstractEntity {
     public void setLogin(String login) {
         this.login = login;
     }
-
-
 
 
 }
