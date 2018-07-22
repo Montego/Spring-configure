@@ -9,4 +9,4 @@
 
     <jpa:repositories base-package="repository"/>
 
-</beans>
+</beans>    

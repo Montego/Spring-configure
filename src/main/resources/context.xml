@@ -7,6 +7,7 @@
 						 http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
     <import resource="classpath:repositories.xml"/>
+
     <context:annotation-config />
     <context:component-scan base-package="service"/>
     <context:component-scan base-package="security"/>
