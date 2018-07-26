@@ -19,6 +19,9 @@ public class Character extends AbstractEntity {
     @OneToMany
     private List<Armor> armor;
 
+    @OneToMany
+    private List<Weapon> weapon;
+
     @OneToOne
-    private Weapon weapon;
+    private Race race;
 }
