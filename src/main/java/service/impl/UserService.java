@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 @Service
-public class UserService implements IUserService {
+public class UserService {
     @Autowired
     private UserRepository userRepository;
 
