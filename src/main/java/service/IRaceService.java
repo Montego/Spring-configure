@@ -1,6 +1,8 @@
 package service;
 
-public interface IRaceService {
+import entity.Race;
 
-    //TODO доделать
+public interface IRaceService {
+    Race addRace(Race race);
+    Race changeRace(Race race);
 }

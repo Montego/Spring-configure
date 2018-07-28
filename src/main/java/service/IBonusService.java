@@ -1,6 +1,10 @@
 package service;
 
-public interface IBonusService {
+import entity.Bonus;
 
-    //TODO доделать
+public interface IBonusService {
+    Bonus addBonus(Bonus bonus);
+    Bonus changeBonus(Bonus bonus);
+    void deleteBonus(Bonus bonus);
+
 }

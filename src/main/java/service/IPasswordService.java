@@ -1,10 +1,11 @@
 package service;
 
+import entity.Password;
 import org.springframework.stereotype.Service;
 
 @Service
 public interface IPasswordService {
-    void addPassword();
-    void changePassword();
+    Password addPassword(Password password);
+    Password changePassword(Password password);
 
 }
