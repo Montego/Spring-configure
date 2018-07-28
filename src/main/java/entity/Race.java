@@ -12,5 +12,6 @@ public class Race extends AbstractEntity{
     @Column(unique = true,nullable = false)
     private String name;
     @OneToMany
-    private List<Bonus> bonus;                                                                      //TODO уточнить список ли?
+    private List<Bonus> bonus;
+
 }

@@ -19,7 +19,7 @@ public class Character extends AbstractEntity {
     @OneToMany
     private List<Armor> armor;
 
-    @OneToMany
+    @OneToOne
     private List<Weapon> weapon;
 
     @OneToOne

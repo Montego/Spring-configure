@@ -9,6 +9,6 @@ import java.util.List;
 public interface CharacterRepository extends JpaRepository<Character, Long> {
 
     Character findByName (String name);
-    List<Character> findByUser (User owner);
+    List<Character> findByOwner (User owner);
 
 }

@@ -1,10 +1,10 @@
 package service;
 
+import entity.User;
 import org.springframework.stereotype.Service;
 
-@Service
 public interface IUserService{
-    void addUser();
-    void changeUser();
-    void deleteUser();
+    User addUser(User user);
+    User changeUser(User user);
+    void deleteUser(User user);
 }

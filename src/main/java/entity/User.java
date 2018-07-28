@@ -28,5 +28,15 @@ public class User extends AbstractEntity {
         this.login = login;
     }
 
+    public void setRegistrated(Timestamp registrated) {
+        this.registrated = registrated;
+    }
 
+    public void setPassword(Password password) {
+        this.password = password;
+    }
+
+    public void setRole(Authority role) {
+        this.role = role;
+    }
 }

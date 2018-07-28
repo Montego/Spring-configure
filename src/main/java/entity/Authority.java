@@ -13,6 +13,9 @@ public class Authority extends AbstractEntity implements GrantedAuthority {
     @Column(unique = true,nullable = false)
     private String authority;
 
+    public void setAuthority(String authority) {
+        this.authority = authority;
+    }
 
     public String getAuthority() {
         return this.authority;

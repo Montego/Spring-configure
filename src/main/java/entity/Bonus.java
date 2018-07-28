@@ -11,4 +11,5 @@ public class Bonus extends AbstractEntity{
     private int attackBonus;
     @Column
     private int defenseBonus;
+
 }
