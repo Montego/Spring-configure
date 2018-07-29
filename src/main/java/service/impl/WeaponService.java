@@ -12,14 +12,13 @@ public class WeaponService implements IWeaponService {
     private WeaponRepository weaponRepository;
 
     public Weapon addWeapon(Weapon weapon) {
-        return null;
+        return weaponRepository.save(weapon);
     }
 
     public Weapon changeWeapon(Weapon weapon) {
         return null;
     }
 
-    public Weapon deleteWeapon(Weapon weapon) {
-        return null;
+    public void deleteWeapon(Weapon weapon) {
     }
 }

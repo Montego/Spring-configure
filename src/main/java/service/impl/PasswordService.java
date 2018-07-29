@@ -18,9 +18,10 @@ public class PasswordService implements IPasswordService {
         passwordRepository.save(password);
         log.info("New password saved with id {}", password.getId());
         return password;
+        //return passwordRepository.save(password);
     }
 
     public Password changePassword(Password password) {
-        return null;
+       return null;
     }
 }

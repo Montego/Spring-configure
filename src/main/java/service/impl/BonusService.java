@@ -11,15 +11,8 @@ public class BonusService implements IBonusService {
     @Autowired
     private BonusRepository bonusRepository;
 
-    public Bonus addBonus(Bonus bonus) {
+    public Bonus getBonus(Bonus bonus) {
         return null;
-    }
-
-    public Bonus changeBonus(Bonus bonus) {
-        return null;
-    }
-
-    public void deleteBonus(Bonus bonus) {
-
     }
 }
+

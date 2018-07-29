@@ -19,4 +19,12 @@ public class Weapon extends AbstractEntity {
 
     @Enumerated(EnumType.STRING)
     private TypeWeapon typeWeapon;
+
+    public Weapon(int damage, TypeWeapon typeWeapon) {
+        this.damage = damage;
+        this.typeWeapon = typeWeapon;
+    }
+
+    public Weapon() {
+    }
 }

@@ -1,5 +1,7 @@
 package service.impl;
 
+import entity.Character;
+import entity.TypeArmor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import repository.CharacterRepository;
@@ -11,10 +13,10 @@ public class CharacterService implements ICharacterService {
     private CharacterRepository characterRepository;
 
     public Character addCharacter(Character character) {
-        return null;
+        return characterRepository.save(character);
     }
 
-    public Character changeCharacter(Character character) {
+    public Character getCharacter(Character character) {
         return null;
     }
 

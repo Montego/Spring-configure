@@ -12,11 +12,7 @@ public class ArmorService implements IArmorService {
     private ArmorRepository armorRepository;
 
     public Armor addArmor(Armor armor) {
-        return null;
-    }
-
-    public Armor changeArmor(Armor armor) {
-        return null;
+        return armorRepository.save(armor);
     }
 
     public void deleteArmor(Armor armor) {

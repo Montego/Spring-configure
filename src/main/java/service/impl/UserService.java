@@ -14,13 +14,8 @@ public class UserService implements IUserService {
     @Autowired
     private UserRepository userRepository;
 
-
     public User addUser(User user) {
         user.setRegistrated(new Timestamp(new Date().getTime()));
-        return userRepository.save(user);
-    }
-
-    public User changeUser(User user) {
         return userRepository.save(user);
     }
 

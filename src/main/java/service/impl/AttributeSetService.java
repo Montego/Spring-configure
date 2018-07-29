@@ -11,15 +11,8 @@ public class AttributeSetService implements IAttributeSetService {
     @Autowired
     private AttributeSetRepository attributeSetRepository;
 
-    public AttributeSet addAttributeSet(AttributeSet attributeSet) {
+    public AttributeSet getAttributeSet(AttributeSet attributeSet) {
         return null;
     }
 
-    public AttributeSet changeAttributeSet(AttributeSet attributeSet) {
-        return null;
-    }
-
-    public void deleteAttributeSet(AttributeSet attributeSet) {
-
-    }
 }

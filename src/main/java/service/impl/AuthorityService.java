@@ -11,15 +11,7 @@ public class AuthorityService implements IAuthorityService {
     @Autowired
     private AuthorityRepository authorityRepository;
 
-    public Authority addAuthority(Authority authority) {
-        return authorityRepository.save(authority);
-    }
-
-    public Authority changeAuthority(Authority authority) {
+    public Authority getAuthority(Authority authority) {
         return null;
-    }
-
-    public void deleteAuthority(Authority authority) {
-
     }
 }
