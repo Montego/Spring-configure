@@ -1,9 +1,25 @@
 package service.impl;
 
+import entity.AttributeSet;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import repository.AttributeSetRepository;
+import service.IAttributeSetService;
 
-public class AttributeSetService {
+@Service
+public class AttributeSetService implements IAttributeSetService {
     @Autowired
     private AttributeSetRepository attributeSetRepository;
+
+    public AttributeSet addAttributeSet(AttributeSet attributeSet) {
+        return null;
+    }
+
+    public AttributeSet changeAttributeSet(AttributeSet attributeSet) {
+        return null;
+    }
+
+    public void deleteAttributeSet(AttributeSet attributeSet) {
+
+    }
 }

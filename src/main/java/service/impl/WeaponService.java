@@ -1,9 +1,25 @@
 package service.impl;
 
+import entity.Weapon;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import repository.WeaponRepository;
+import service.IWeaponService;
 
-public class WeaponService {
+@Service
+public class WeaponService implements IWeaponService {
     @Autowired
     private WeaponRepository weaponRepository;
+
+    public Weapon addWeapon(Weapon weapon) {
+        return null;
+    }
+
+    public Weapon changeWeapon(Weapon weapon) {
+        return null;
+    }
+
+    public Weapon deleteWeapon(Weapon weapon) {
+        return null;
+    }
 }

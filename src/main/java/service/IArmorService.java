@@ -3,7 +3,6 @@ package service;
 import entity.Armor;
 import org.springframework.stereotype.Service;
 
-@Service
 public interface IArmorService {
     Armor addArmor(Armor armor);
     Armor changeArmor(Armor armor);

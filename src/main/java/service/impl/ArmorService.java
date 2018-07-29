@@ -1,9 +1,25 @@
 package service.impl;
 
+import entity.Armor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import repository.ArmorRepository;
+import service.IArmorService;
 
-public class ArmorService {
+@Service
+public class ArmorService implements IArmorService {
     @Autowired
     private ArmorRepository armorRepository;
+
+    public Armor addArmor(Armor armor) {
+        return null;
+    }
+
+    public Armor changeArmor(Armor armor) {
+        return null;
+    }
+
+    public void deleteArmor(Armor armor) {
+
+    }
 }

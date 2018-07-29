@@ -1,8 +1,13 @@
 package entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "characters")
 public class Character extends AbstractEntity {
@@ -19,9 +24,9 @@ public class Character extends AbstractEntity {
     @OneToMany
     private List<Armor> armor;
 
-    @OneToOne
+    @OneToMany
     private List<Weapon> weapon;
 
-    @OneToOne
+    @ManyToOne
     private Race race;
 }
