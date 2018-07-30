@@ -21,9 +21,10 @@ public class Armor extends AbstractEntity {
     private TypeArmor type;
 
 
-    public Armor(int defense, TypeArmor type) {
+    public Armor(int defense, TypeArmor type, String name) {
         this.defense = defense;
         this.type = type;
+        this.name = name;
     }
 
     public Armor() {

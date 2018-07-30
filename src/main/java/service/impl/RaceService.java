@@ -13,7 +13,7 @@ public class RaceService implements IRaceService {
     private RaceRepository raceRepository;
 
     public Race getRace(Race race) {
-        return null;
+        return raceRepository.getOne(race.getId());
     }
 
 }

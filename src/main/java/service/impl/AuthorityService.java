@@ -12,6 +12,10 @@ public class AuthorityService implements IAuthorityService {
     private AuthorityRepository authorityRepository;
 
     public Authority getAuthority(Authority authority) {
-        return null;
+        return authorityRepository.getOne(authority.getId());
+    }
+
+    public Authority addAuthority(Authority authority) {
+        return authorityRepository.save(authority);
     }
 }

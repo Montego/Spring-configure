@@ -12,7 +12,7 @@ public class BonusService implements IBonusService {
     private BonusRepository bonusRepository;
 
     public Bonus getBonus(Bonus bonus) {
-        return null;
+        return bonusRepository.getOne(bonus.getId());
     }
 }
 

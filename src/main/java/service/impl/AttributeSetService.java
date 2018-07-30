@@ -12,7 +12,11 @@ public class AttributeSetService implements IAttributeSetService {
     private AttributeSetRepository attributeSetRepository;
 
     public AttributeSet getAttributeSet(AttributeSet attributeSet) {
-        return null;
+        return attributeSetRepository.getOne(attributeSet.getId());
+    }
+
+    public AttributeSet addAttributeSet(AttributeSet attributeSet) {
+        return attributeSetRepository.save(attributeSet);
     }
 
 }

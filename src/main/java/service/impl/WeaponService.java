@@ -15,10 +15,8 @@ public class WeaponService implements IWeaponService {
         return weaponRepository.save(weapon);
     }
 
-    public Weapon changeWeapon(Weapon weapon) {
+    public Weapon getWeapon(Weapon weapon) {
         return null;
     }
 
-    public void deleteWeapon(Weapon weapon) {
-    }
 }
