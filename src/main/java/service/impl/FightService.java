@@ -7,8 +7,14 @@ import service.fightImpl1.IFightService;
 
 @Service
 public class FightService implements IFightService {
+
+    private final FightRepository fightRepository;
+
     @Autowired
-    private FightRepository fightRepository;
+    public FightService(FightRepository fightRepository) {
+        this.fightRepository = fightRepository;
+    }
+
 
     public String fight(Character char1, Character char2) {
         return null;

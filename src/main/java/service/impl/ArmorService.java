@@ -6,9 +6,6 @@ import org.springframework.stereotype.Service;
 import repository.ArmorRepository;
 import service.IArmorService;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Service
 public class ArmorService implements IArmorService {
     @Autowired

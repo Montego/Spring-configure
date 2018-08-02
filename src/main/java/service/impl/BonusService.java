@@ -11,6 +11,9 @@ public class BonusService implements IBonusService {
     @Autowired
     private BonusRepository bonusRepository;
 
+    @Autowired
+    private FightService fightService;
+
     public Bonus getBonus(Bonus bonus) {
         return bonusRepository.getOne(bonus.getId());
     }

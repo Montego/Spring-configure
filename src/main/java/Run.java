@@ -6,6 +6,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.impl.*;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static entity.TypeArmor.*;
 import static entity.TypeWeapon.SPEAR;
@@ -75,13 +79,14 @@ public class Run {
         weaponService.addWeapon(weapon1);
         weaponService.addWeapon(weapon2);
 
+        //List<Armor> armors = IntStream.range(0, 10).boxed().map(i -> new Armor(new Random().nextInt(), TypeArmor.values()[(int)Math.random()*TypeArmor.values().length], String.valueOf(new Random().nextLong()))).collect(Collectors.toList());
 
-        Armor headArmor1 = new Armor(10, HEAD,"шлем1");
-        Armor bodyArmor1 = new Armor(15, BODY,"доспех1");
-        Armor legsArmor1 = new Armor(5, LEGS,"поножи1");
-        Armor headArmor2 = new Armor(15, HEAD,"шлем2");
-        Armor bodyArmor2 = new Armor(10, BODY,"доспех2");
-        Armor legsArmor2 = new Armor(20, LEGS,"поножи2");
+        Armor headArmor1 = new Armor(10, HEAD, "шлем1");
+        Armor bodyArmor1 = new Armor(15, BODY, "доспех1");
+        Armor legsArmor1 = new Armor(5, LEGS, "поножи1");
+        Armor headArmor2 = new Armor(15, HEAD, "шлем2");
+        Armor bodyArmor2 = new Armor(10, BODY, "доспех2");
+        Armor legsArmor2 = new Armor(20, LEGS, "поножи2");
         ArrayList<Armor> armors1 = new ArrayList<Armor>();
         ArrayList<Armor> armors2 = new ArrayList<Armor>();
         armors1.add(headArmor1);
@@ -102,14 +107,17 @@ public class Run {
         character1.setAttributeSet(attributeSet1);
         character1.setArmor(armors1);
         character1.setWeapon(weapons1);
+        character1.setOwner(user);
 
         character2.setName("PETYA");
         character2.setAttributeSet(attributeSet2);
         character2.setArmor(armors2);
         character2.setWeapon(weapons2);
+        character2.setOwner(user);
         characterService.addCharacter(character1);
         characterService.addCharacter(character2);
         log.info("Aplication stop");
+
 
     }
 }
