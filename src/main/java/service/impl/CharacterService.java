@@ -9,9 +9,10 @@ import service.ICharacterService;
 
 @Service
 public class CharacterService implements ICharacterService {
-    @Autowired
+
     private CharacterRepository characterRepository;
 
+    @Autowired
     public CharacterService(CharacterRepository characterRepository){
         this.characterRepository = characterRepository;
     }

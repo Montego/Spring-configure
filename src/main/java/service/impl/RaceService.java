@@ -9,9 +9,10 @@ import service.IRaceService;
 
 @Service
 public class RaceService implements IRaceService {
-    @Autowired
+
     private RaceRepository raceRepository;
 
+    @Autowired
     public RaceService(RaceRepository raceRepository){
         this.raceRepository = raceRepository;
     }

@@ -8,9 +8,9 @@ import service.IAttributeSetService;
 
 @Service
 public class AttributeSetService implements IAttributeSetService {
-    @Autowired
     private AttributeSetRepository attributeSetRepository;
 
+    @Autowired
     public AttributeSetService(AttributeSetRepository attributeSetRepository){
         this.attributeSetRepository = attributeSetRepository;
     }

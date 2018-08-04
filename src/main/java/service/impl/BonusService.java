@@ -8,9 +8,8 @@ import service.IBonusService;
 
 @Service
 public class BonusService implements IBonusService {
-    @Autowired
     private BonusRepository bonusRepository;
-
+    @Autowired
     public BonusService(BonusRepository bonusRepository){
         this.bonusRepository = bonusRepository;
     }

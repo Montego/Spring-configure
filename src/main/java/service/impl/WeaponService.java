@@ -8,9 +8,10 @@ import service.IWeaponService;
 
 @Service
 public class WeaponService implements IWeaponService {
-    @Autowired
+
     private WeaponRepository weaponRepository;
 
+    @Autowired
     public WeaponService(WeaponRepository weaponRepository){
         this.weaponRepository = weaponRepository;
     }

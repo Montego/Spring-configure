@@ -8,9 +8,9 @@ import service.IAuthorityService;
 
 @Service
 public class AuthorityService implements IAuthorityService {
-    @Autowired
     private AuthorityRepository authorityRepository;
 
+    @Autowired
     public AuthorityService(AuthorityRepository authorityRepository){
         this.authorityRepository = authorityRepository;
     }

@@ -15,9 +15,10 @@ import java.util.List;
 @Service
 @Slf4j
 public class UserService implements IUserService {
-    @Autowired
+
     private UserRepository userRepository;
 
+    @Autowired
     public UserService(UserRepository userRepository){
         this.userRepository = userRepository;
     }
