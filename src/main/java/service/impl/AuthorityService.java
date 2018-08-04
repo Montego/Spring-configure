@@ -11,6 +11,10 @@ public class AuthorityService implements IAuthorityService {
     @Autowired
     private AuthorityRepository authorityRepository;
 
+    public AuthorityService(AuthorityRepository authorityRepository){
+        this.authorityRepository = authorityRepository;
+    }
+
     public Authority getAuthority(Authority authority) {
         return authorityRepository.getOne(authority.getId());
     }

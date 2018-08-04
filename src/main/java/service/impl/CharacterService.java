@@ -12,6 +12,10 @@ public class CharacterService implements ICharacterService {
     @Autowired
     private CharacterRepository characterRepository;
 
+    public CharacterService(CharacterRepository characterRepository){
+        this.characterRepository = characterRepository;
+    }
+
     public Character addCharacter(Character character) {
         return characterRepository.save(character);
     }

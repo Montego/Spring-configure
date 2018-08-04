@@ -11,8 +11,12 @@ import service.IPasswordService;
 @Slf4j
 public class PasswordService implements IPasswordService {
 
-    @Autowired
     private PasswordRepository passwordRepository;
+
+    @Autowired
+    public PasswordService(PasswordRepository passwordRepository) {
+        this.passwordRepository = passwordRepository;
+    }
 
     public Password addPassword(Password password) {
         passwordRepository.save(password);
@@ -22,6 +26,6 @@ public class PasswordService implements IPasswordService {
     }
 
     public Password changePassword(Password password) {
-       return null;
+        return null;
     }
 }

@@ -11,6 +11,10 @@ public class WeaponService implements IWeaponService {
     @Autowired
     private WeaponRepository weaponRepository;
 
+    public WeaponService(WeaponRepository weaponRepository){
+        this.weaponRepository = weaponRepository;
+    }
+
     public Weapon addWeapon(Weapon weapon) {
         return weaponRepository.save(weapon);
     }

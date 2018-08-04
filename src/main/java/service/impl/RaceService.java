@@ -12,6 +12,10 @@ public class RaceService implements IRaceService {
     @Autowired
     private RaceRepository raceRepository;
 
+    public RaceService(RaceRepository raceRepository){
+        this.raceRepository = raceRepository;
+    }
+
     public Race getRace(Race race) {
         return raceRepository.getOne(race.getId());
     }

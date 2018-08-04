@@ -8,7 +8,7 @@ import service.fightImpl1.IFightService;
 @Service
 public class FightService implements IFightService {
 
-    private final FightRepository fightRepository;
+    private FightRepository fightRepository;
 
     @Autowired
     public FightService(FightRepository fightRepository) {

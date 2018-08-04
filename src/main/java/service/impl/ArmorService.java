@@ -8,9 +8,12 @@ import service.IArmorService;
 
 @Service
 public class ArmorService implements IArmorService {
-    @Autowired
-    private ArmorRepository armorRepository;
 
+    private ArmorRepository armorRepository;
+    @Autowired
+    public ArmorService(ArmorRepository armorRepository){
+        this.armorRepository = armorRepository;
+    }
     public Armor addArmor(Armor armor) {
         return armorRepository.save(armor);
     }
