@@ -22,4 +22,11 @@ public class AuthorityService implements IAuthorityService {
     public Authority addAuthority(Authority authority) {
         return authorityRepository.save(authority);
     }
+
+    @Override
+    public Authority getByRole(String role) {
+        return authorityRepository.findByAuthority(role);
+    }
+
+
 }
