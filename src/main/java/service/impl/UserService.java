@@ -5,6 +5,7 @@ import entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import repository.AuthorityRepository;
 import repository.UserRepository;
 import service.IUserService;
 
@@ -18,6 +19,7 @@ public class UserService implements IUserService {
 
     private UserRepository userRepository;
     private AuthorityService authorityService;
+   // private AuthorityRepository authorityRepository;
 
     @Autowired
     public UserService(UserRepository userRepository, AuthorityService authorityService) {
@@ -26,7 +28,7 @@ public class UserService implements IUserService {
     }
 
     public User addUser(User user) {
-        if (user == null || user.getLogin()==null || user.getPassword()==null) return null;
+        if (user == null || user.getLogin() == null || user.getPassword() == null) return null;
         user.setRole(authorityService.getByRole("ROLE_USER"));
         user.setRegistrated(new Timestamp(new Date().getTime()));
         User savedUser = userRepository.save(user);
@@ -47,7 +49,6 @@ public class UserService implements IUserService {
         return userRepository.findByLogin(login);
     }
 
-
     public User getUser(String login, String authority) {
         Authority role = authorityService.getByRole(authority);
         return userRepository.findByLoginAndRole(login, role);
@@ -57,8 +58,10 @@ public class UserService implements IUserService {
         return userRepository.findById(id).orElse(null);
     }
 
-    @Override
-    public User saveUser() {
-        return null;
-    }
+//    public List<Authority> getAllRoles() {
+//        //return authorityService.findAll();
+//        return authorityRepository.findAll();
+//    }
+
+
 }

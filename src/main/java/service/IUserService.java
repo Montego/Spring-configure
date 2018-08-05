@@ -9,5 +9,4 @@ public interface IUserService{
     void deleteUser(User user);
     List<User> getUsers();
     User getUser(String login);
-    User saveUser();
 }

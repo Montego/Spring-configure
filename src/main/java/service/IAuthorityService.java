@@ -7,4 +7,6 @@ public interface IAuthorityService {
     Authority addAuthority(Authority authority);
 
     Authority getByRole (String role);
+    Authority getAllRoles();
+
 }

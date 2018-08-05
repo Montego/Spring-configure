@@ -8,6 +8,7 @@ import service.IAuthorityService;
 
 @Service
 public class AuthorityService implements IAuthorityService {
+
     private AuthorityRepository authorityRepository;
 
     @Autowired
@@ -26,6 +27,11 @@ public class AuthorityService implements IAuthorityService {
     @Override
     public Authority getByRole(String role) {
         return authorityRepository.findByAuthority(role);
+    }
+
+    @Override
+    public Authority getAllRoles() {
+        return (Authority) authorityRepository.findAll();
     }
 
 
