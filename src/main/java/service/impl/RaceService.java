@@ -21,4 +21,8 @@ public class RaceService implements IRaceService {
         return raceRepository.getOne(race.getId());
     }
 
+    public Race addRace(Race race) {
+        return raceRepository.save(race);
+    }
+
 }

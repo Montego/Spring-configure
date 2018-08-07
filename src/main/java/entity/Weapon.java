@@ -20,9 +20,10 @@ public class Weapon extends AbstractEntity {
     @Enumerated(EnumType.STRING)
     private TypeWeapon typeWeapon;
 
-    public Weapon(int damage, TypeWeapon typeWeapon) {
+    public Weapon(int damage, TypeWeapon typeWeapon, String name) {
         this.damage = damage;
         this.typeWeapon = typeWeapon;
+        this.name = name;
     }
 
     public Weapon() {

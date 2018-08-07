@@ -1,19 +1,13 @@
 import entity.*;
 import entity.Character;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.impl.*;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 import static entity.TypeArmor.*;
-import static entity.TypeWeapon.SPEAR;
-import static entity.TypeWeapon.SWORD;
+import static entity.TypeWeapon.*;
 
 @Slf4j
 public class Run {
@@ -33,51 +27,42 @@ public class Run {
         AttributeSetService attributeSetService = context.getBean(AttributeSetService.class);
         ArmorService armorService = context.getBean(ArmorService.class);
         WeaponService weaponService = context.getBean(WeaponService.class);
+        RaceService raceService = context.getBean(RaceService.class);
 
-        Password password = new Password();
-        password.setPassword("Password1");
-        passwordService.addPassword(password);
+        Password password1 = new Password();
+        password1.setPassword("Password1");
+        passwordService.addPassword(password1);
+        Password password2 = new Password();
+        password2.setPassword("Password2");
+        passwordService.addPassword(password2);
 
-        Authority authority = new Authority();
-        authority.setAuthority("ADMIN");
-        authorityService.addAuthority(authority);
-        authorityService.getAuthority(authority);
+        Authority adminRole = new Authority();
+        adminRole.setAuthority("ADMIN");
+        authorityService.addAuthority(adminRole);
+        authorityService.getAuthority(adminRole);
 
+        Authority userRole = new Authority();
+        userRole.setAuthority("USER");
+        authorityService.addAuthority(userRole);
 
-        User user = new User("User1", password);
+        User user1 = new User("User1", password1);
 //        user.setLogin("lsdkfjldskjfl");
 //        user.setPassword(password);
-        user.setRole(authority);
-        userService.addUser(user);
+        user1.setRole(userRole);
+        userService.addUser(user1);
 
-        Character character1 = new Character();
-        //characterService.addCharacter(character1);
-        Character character2 = new Character();
-        //characterService.addCharacter(character2);
+        User user2 = new User("User2", password2);
+        user2.setRole(userRole);
+        userService.addUser(user2);
 
-
-        AttributeSet attributeSet1 = new AttributeSet();
-        AttributeSet attributeSet2 = new AttributeSet();
-        attributeSet1.setAttack(10);
-        attributeSet1.setDefence(20);
-        attributeSet1.setNonDamageChance(15);
-        attributeSet2.setAttack(15);
-        attributeSet2.setDefence(15);
-        attributeSet2.setNonDamageChance(20);
-        attributeSetService.addAttributeSet(attributeSet1);
-        attributeSetService.addAttributeSet(attributeSet2);
-
-
-        Weapon weapon1 = new Weapon(20, SWORD);
-        weapon1.setName("SWOOOOOORD!");
-        Weapon weapon2 = new Weapon(30, SPEAR);
-        weapon2.setName("SPEEEEAARRR!");
-        ArrayList<Weapon> weapons1 = new ArrayList<Weapon>();
-        ArrayList<Weapon> weapons2 = new ArrayList<Weapon>();
-        weapons1.add(weapon1);
-        weapons2.add(weapon2);
+        Weapon weapon1 = new Weapon(20, SWORD, "SWORD");
+        Weapon weapon2 = new Weapon(30, SPEAR, "SPEAR");
+        Weapon weapon3 = new Weapon(35, MACE, "MACE");
+        Weapon weapon4 = new Weapon(25, BOW, "BOW");
         weaponService.addWeapon(weapon1);
         weaponService.addWeapon(weapon2);
+        weaponService.addWeapon(weapon3);
+        weaponService.addWeapon(weapon4);
 
         //List<Armor> armors = IntStream.range(0, 10).boxed().map(i -> new Armor(new Random().nextInt(), TypeArmor.values()[(int)Math.random()*TypeArmor.values().length], String.valueOf(new Random().nextLong()))).collect(Collectors.toList());
 
@@ -87,35 +72,66 @@ public class Run {
         Armor headArmor2 = new Armor(15, HEAD, "шлем2");
         Armor bodyArmor2 = new Armor(10, BODY, "доспех2");
         Armor legsArmor2 = new Armor(20, LEGS, "поножи2");
+        Armor headArmor3 = new Armor(12, HEAD, "шлем3");
+        Armor bodyArmor3 = new Armor(20, BODY, "доспех3");
+        Armor legsArmor3 = new Armor(1, LEGS, "поножи3");
+        Armor headArmor4 = new Armor(10, HEAD, "шлем4");
+        Armor bodyArmor4 = new Armor(10, BODY, "доспех4");
+        Armor legsArmor4 = new Armor(1, LEGS, "поножи4");
         ArrayList<Armor> armors1 = new ArrayList<Armor>();
         ArrayList<Armor> armors2 = new ArrayList<Armor>();
+        ArrayList<Armor> armors3 = new ArrayList<Armor>();
+        ArrayList<Armor> armors4 = new ArrayList<Armor>();
+
         armors1.add(headArmor1);
         armors1.add(bodyArmor1);
         armors1.add(legsArmor1);
         armors2.add(headArmor2);
         armors2.add(bodyArmor2);
         armors2.add(legsArmor2);
+        armors3.add(headArmor3);
+        armors3.add(bodyArmor3);
+        armors3.add(legsArmor3);
+        armors4.add(headArmor4);
+        armors4.add(bodyArmor4);
+        armors4.add(legsArmor4);
+
         armorService.addArmor(headArmor1);
         armorService.addArmor(bodyArmor1);
         armorService.addArmor(legsArmor1);
         armorService.addArmor(headArmor2);
         armorService.addArmor(bodyArmor2);
         armorService.addArmor(legsArmor2);
+        armorService.addArmor(headArmor3);
+        armorService.addArmor(bodyArmor3);
+        armorService.addArmor(legsArmor3);
+        armorService.addArmor(headArmor4);
+        armorService.addArmor(bodyArmor4);
+        armorService.addArmor(legsArmor4);
 
+        AttributeSet humanSet = new AttributeSet(14, 12, 9);
+        AttributeSet orcSet = new AttributeSet(20, 10, 5);
+        AttributeSet elfSet = new AttributeSet(17, 8, 10);
+        attributeSetService.addAttributeSet(humanSet);
+        attributeSetService.addAttributeSet(orcSet);
+        attributeSetService.addAttributeSet(elfSet);
 
-        character1.setName("VASYA");
-        character1.setAttributeSet(attributeSet1);
-        character1.setArmor(armors1);
-        character1.setWeapon(weapons1);
-        character1.setOwner(user);
+        Race human = new Race("HUMAN", humanSet);
+        Race orc = new Race("ORC", orcSet);
+        Race elf = new Race("ELF", elfSet);
+        raceService.addRace(human);
+        raceService.addRace(orc);
+        raceService.addRace(elf);
 
-        character2.setName("PETYA");
-        character2.setAttributeSet(attributeSet2);
-        character2.setArmor(armors2);
-        character2.setWeapon(weapons2);
-        character2.setOwner(user);
+        Character character1 = new Character("CHARACTER №1", user1, armors1, weapon1, human);
         characterService.addCharacter(character1);
+        Character character2 = new Character("CHARACTER №2", user1, armors2, weapon2, orc);
         characterService.addCharacter(character2);
+        Character character3 = new Character("CHARACTER №3", user2, armors3, weapon3, orc);
+        characterService.addCharacter(character3);
+        Character character4 = new Character("CHARACTER №4", user2, armors4, weapon4, elf);
+        characterService.addCharacter(character4);
+
         log.info("Aplication stop");
 
 

@@ -24,9 +24,20 @@ public class Character extends AbstractEntity {
     @OneToMany
     private List<Armor> armor;
 
-    @OneToMany
-    private List<Weapon> weapon;
+    @OneToOne
+    private Weapon weapon;
 
     @ManyToOne
     private Race race;
+
+    public Character(String name, User owner, List<Armor> armor, Weapon weapon, Race race) {
+        this.name = name;
+        this.owner = owner;
+        this.armor = armor;
+        this.weapon = weapon;
+        this.race = race;
+    }
+
+    public Character(){}
+
 }

@@ -19,6 +19,13 @@ public class AttributeSet extends AbstractEntity {
     @Column(nullable = false)
     private int nonDamageChance;
 
+
     public AttributeSet() {
+    }
+
+    public AttributeSet(int attack, int defence, int nonDamageChance) {
+        this.attack = attack;
+        this.defence = defence;
+        this.nonDamageChance = nonDamageChance;
     }
 }

@@ -3,10 +3,7 @@ package entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Getter
@@ -16,7 +13,17 @@ import java.util.List;
 public class Race extends AbstractEntity{
     @Column(unique = true,nullable = false)
     private String name;
-    @OneToMany
-    private List<Bonus> bonus;
+//    @OneToMany
+//    private List<Bonus> bonus;
+    @OneToOne
+    private AttributeSet attributeSet;
+
+    public Race(String name, AttributeSet attributeSet) {
+        this.name = name;
+        this.attributeSet = attributeSet;
+    }
+    public Race(){
+
+    }
 
 }

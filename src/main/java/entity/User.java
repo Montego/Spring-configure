@@ -27,6 +27,8 @@ public class User extends AbstractEntity {
     @Column
     private Timestamp registrated;
 
+
+
     public User(String login, Password password) {
         this.login = login;
         this.password = password;
