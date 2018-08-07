@@ -4,9 +4,12 @@ package service;
 import entity.Armor;
 import entity.Character;
 
+import java.util.List;
+
 public interface ICharacterService {
     Character addCharacter(Character character);
-    Character getCharacter(Character character);
-    void deleteCharacter(Character character);
+    Character getOneCharacter(String name);
+    List<Character> getAllCharacters();
+    void deleteCharacter(String name);
 
 }

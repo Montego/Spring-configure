@@ -5,6 +5,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.impl.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static entity.TypeArmor.*;
 import static entity.TypeWeapon.*;
@@ -83,6 +86,22 @@ public class Run {
         ArrayList<Armor> armors3 = new ArrayList<Armor>();
         ArrayList<Armor> armors4 = new ArrayList<Armor>();
 
+
+//        Map<String,Armor> allArmors = new HashMap<>();
+//        allArmors.put("шлем №1",headArmor1);
+//        allArmors.put("шлем №2",headArmor2);
+//        allArmors.put("шлем №3",headArmor3);
+//        allArmors.put("шлем №4",headArmor4);
+//        allArmors.put("доспех №1",bodyArmor1);
+//        allArmors.put("доспех №2",bodyArmor2);
+//        allArmors.put("доспех №3",bodyArmor3);
+//        allArmors.put("доспех №4",bodyArmor4);
+//        allArmors.put("поножи №1",legsArmor1);
+//        allArmors.put("поножи №2",legsArmor2);
+//        allArmors.put("поножи №3",legsArmor3);
+//        allArmors.put("поножи №4",legsArmor4);
+
+
         armors1.add(headArmor1);
         armors1.add(bodyArmor1);
         armors1.add(legsArmor1);
@@ -95,6 +114,7 @@ public class Run {
         armors4.add(headArmor4);
         armors4.add(bodyArmor4);
         armors4.add(legsArmor4);
+
 
         armorService.addArmor(headArmor1);
         armorService.addArmor(bodyArmor1);

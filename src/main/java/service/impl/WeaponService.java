@@ -1,10 +1,13 @@
 package service.impl;
 
+import entity.TypeWeapon;
 import entity.Weapon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import repository.WeaponRepository;
 import service.IWeaponService;
+
+import java.util.List;
 
 @Service
 public class WeaponService implements IWeaponService {
@@ -20,8 +23,20 @@ public class WeaponService implements IWeaponService {
         return weaponRepository.save(weapon);
     }
 
-    public Weapon getWeapon(Weapon weapon) {
-        return null;
+    @Override
+    public List<Weapon> getAllWeapons() {
+        return weaponRepository.findAll();
     }
+
+    @Override
+    public Weapon getOneWeapon(String name) {
+        return weaponRepository.findByName(name);
+    }
+
+    @Override
+    public List<Weapon> getWeapons(TypeWeapon typeWeapon) {
+        return weaponRepository.findByTypeWeapon(typeWeapon);
+    }
+
 
 }

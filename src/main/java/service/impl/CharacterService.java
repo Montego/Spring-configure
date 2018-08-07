@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import repository.CharacterRepository;
 import service.ICharacterService;
 
+import java.util.List;
+
 @Service
 public class CharacterService implements ICharacterService {
 
@@ -21,11 +23,17 @@ public class CharacterService implements ICharacterService {
         return characterRepository.save(character);
     }
 
-    public Character getCharacter(Character character) {
-        return null;
+    @Override
+    public Character getOneCharacter(String name) {
+        return characterRepository.findByName(name);
     }
 
-    public void deleteCharacter(Character character) {
+    @Override
+    public List<Character> getAllCharacters() {
+        return characterRepository.findAll();
+    }
+
+    public void deleteCharacter(String name) {
 
     }
 }

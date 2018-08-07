@@ -1,10 +1,13 @@
 package service.impl;
 
 import entity.Armor;
+import entity.TypeArmor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import repository.ArmorRepository;
 import service.IArmorService;
+
+import java.util.List;
 
 @Service
 public class ArmorService implements IArmorService {
@@ -18,8 +21,22 @@ public class ArmorService implements IArmorService {
         return armorRepository.save(armor);
     }
 
-    public Armor getArmor(Armor armor) {
-        return null;
+    public List<Armor> getArmors(TypeArmor typeArmor){
+        return armorRepository.findByTypeArmor(typeArmor);
+    }
+
+    public List<Armor> getOneArmor(TypeArmor typeArmor) {
+        return armorRepository.findByTypeArmor(typeArmor);
+    }
+
+    @Override
+    public Armor getOneArmor(String name) {
+        return armorRepository.findByName(name);
+    }
+
+    @Override
+    public List<Armor> getAllArmors() {
+        return armorRepository.findAll();
     }
 
 }
