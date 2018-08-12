@@ -20,12 +20,11 @@ public class FightService implements IFightService {
         this.fightRepository = fightRepository;
     }
 
-
+    @Override
     public String fight(Character char1, Character char2) {
 
         int powerChar1 = getCharDamage(char1) + getArmorDefence(char1) + getCharAttack(char1) + getCharDefence(char1) + getNonDamage(char1);
         int powerChar2 = getCharDamage(char2) + getArmorDefence(char2) + getCharAttack(char2) + getCharDefence(char2) + getNonDamage(char2);
-
 
         String messageTemplate = "%s Победил!\n%s сильнне на : %d очков";
         String winnerName = powerChar1 > powerChar2 ? char1.getName() : char2.getName();
@@ -33,11 +32,12 @@ public class FightService implements IFightService {
         return String.format(messageTemplate, winnerName, winnerName, powerChar1 - powerChar2);
     }
 
-
+    @Override
     public Fight addFight(Fight fight) {
         return fightRepository.save(fight);
     }
 
+    @Override
     public List<Fight> getFights() {
         return fightRepository.findAll();
     }

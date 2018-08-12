@@ -10,8 +10,9 @@ import java.util.List;
 public class BattlefieldService implements IBattlefieldService {
 
     private BattlefieldRepository battlefieldRepository;
+
     @Autowired
-    public BattlefieldService(BattlefieldRepository battlefieldRepository){
+    public BattlefieldService(BattlefieldRepository battlefieldRepository) {
         this.battlefieldRepository = battlefieldRepository;
     }
 

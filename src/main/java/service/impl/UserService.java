@@ -5,7 +5,6 @@ import entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.AuthorityRepository;
 import repository.UserRepository;
 import service.IUserService;
 
@@ -19,14 +18,13 @@ public class UserService implements IUserService {
 
     private UserRepository userRepository;
     private AuthorityService authorityService;
-   // private AuthorityRepository authorityRepository;
 
     @Autowired
     public UserService(UserRepository userRepository, AuthorityService authorityService) {
         this.userRepository = userRepository;
         this.authorityService = authorityService;
     }
-
+    @Override
     public User addUser(User user) {
         if (user == null || user.getLogin() == null || user.getPassword() == null) return null;
         user.setRole(authorityService.getByRole("ROLE_USER"));
@@ -35,11 +33,11 @@ public class UserService implements IUserService {
         log.info("User " + savedUser.getLogin() + " saved with id: " + savedUser.getId());
         return savedUser;
     }
-
+    @Override
     public void deleteUser(User user) {
         userRepository.delete(user);
     }
-
+    @Override
     public List<User> getUsers() {
         return userRepository.findAll();
     }
@@ -48,20 +46,15 @@ public class UserService implements IUserService {
     public User getUser(String login) {
         return userRepository.findByLogin(login);
     }
-
+    @Override
     public User getUser(String login, String authority) {
         Authority role = authorityService.getByRole(authority);
         return userRepository.findByLoginAndRole(login, role);
     }
-
+    @Override
     public User getUser(long id) {
         return userRepository.findById(id).orElse(null);
     }
-
-//    public List<Authority> getAllRoles() {
-//        //return authorityService.findAll();
-//        return authorityRepository.findAll();
-//    }
 
 
 }

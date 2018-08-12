@@ -2,7 +2,6 @@ package service.impl;
 
 import entity.Race;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import repository.RaceRepository;
 import service.IRaceService;
@@ -15,14 +14,14 @@ public class RaceService implements IRaceService {
     private RaceRepository raceRepository;
 
     @Autowired
-    public RaceService(RaceRepository raceRepository){
+    public RaceService(RaceRepository raceRepository) {
         this.raceRepository = raceRepository;
     }
-
+    @Override
     public Race getOneRace(String name) {
         return raceRepository.findByName(name);
     }
-
+    @Override
     public Race addRace(Race race) {
         return raceRepository.save(race);
     }

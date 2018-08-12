@@ -11,7 +11,7 @@ public class AttributeSetService implements IAttributeSetService {
     private AttributeSetRepository attributeSetRepository;
 
     @Autowired
-    public AttributeSetService(AttributeSetRepository attributeSetRepository){
+    public AttributeSetService(AttributeSetRepository attributeSetRepository) {
         this.attributeSetRepository = attributeSetRepository;
     }
 

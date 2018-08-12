@@ -18,6 +18,7 @@ public class PasswordService implements IPasswordService {
         this.passwordRepository = passwordRepository;
     }
 
+    @Override
     public Password addPassword(Password password) {
         passwordRepository.save(password);
         log.info("New password saved with id {}", password.getId());
