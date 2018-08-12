@@ -21,11 +21,8 @@ public class ArmorService implements IArmorService {
         return armorRepository.save(armor);
     }
 
-    public List<Armor> getArmors(TypeArmor typeArmor){
-        return armorRepository.findByTypeArmor(typeArmor);
-    }
 
-    public List<Armor> getOneArmor(TypeArmor typeArmor) {
+    public List<Armor> getArmors(Enum typeArmor){
         return armorRepository.findByTypeArmor(typeArmor);
     }
 

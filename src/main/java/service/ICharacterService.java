@@ -11,5 +11,6 @@ public interface ICharacterService {
     Character getOneCharacter(String name);
     List<Character> getAllCharacters();
     void deleteCharacter(String name);
+    Character getOneCharacter(Long id);
 
 }

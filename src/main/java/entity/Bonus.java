@@ -17,4 +17,10 @@ public class Bonus extends AbstractEntity{
     @Column
     private int defenseBonus;
 
+    public Bonus(int attackBonus, int defenseBonus){
+        this.attackBonus = attackBonus;
+        this.defenseBonus = defenseBonus;
+    }
+    public Bonus(){
+    }
 }

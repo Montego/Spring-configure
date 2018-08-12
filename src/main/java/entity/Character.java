@@ -18,8 +18,8 @@ public class Character extends AbstractEntity {
     @ManyToOne
     private User owner;
 
-    @OneToOne
-    private AttributeSet attributeSet;
+//    @OneToOne
+//    private AttributeSet attributeSet;
 
     @OneToMany
     private List<Armor> armor;

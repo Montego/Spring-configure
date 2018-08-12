@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Getter
@@ -18,12 +19,13 @@ public class AttributeSet extends AbstractEntity {
     private int defence;
     @Column(nullable = false)
     private int nonDamageChance;
-
+    @OneToOne
+    private Race race;
 
     public AttributeSet() {
     }
 
-    public AttributeSet(int attack, int defence, int nonDamageChance) {
+    public AttributeSet( int attack, int defence, int nonDamageChance) {
         this.attack = attack;
         this.defence = defence;
         this.nonDamageChance = nonDamageChance;

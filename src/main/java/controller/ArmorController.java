@@ -34,7 +34,7 @@ public class ArmorController {
     }
 
     @RequestMapping(value = "/{type}", method = RequestMethod.GET)
-    public ResponseEntity<?> getOneArmor(@PathVariable TypeArmor typeArmor) {
-        return new ResponseEntity<>(armorService.getOneArmor(typeArmor), HttpStatus.OK);
+    public ResponseEntity<?> getArmors(@PathVariable Enum typeArmor) {
+        return new ResponseEntity<>(armorService.getArmors(typeArmor), HttpStatus.OK);
     }
 }

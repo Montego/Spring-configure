@@ -18,12 +18,12 @@ public class Armor extends AbstractEntity {
     private int defense;
 
     @Enumerated(EnumType.STRING)
-    private TypeArmor type;
+    private TypeArmor typeArmor;
 
 
-    public Armor(int defense, TypeArmor type, String name) {
+    public Armor(int defense, TypeArmor typeArmor, String name) {
         this.defense = defense;
-        this.type = type;
+        this.typeArmor = typeArmor;
         this.name = name;
     }
 

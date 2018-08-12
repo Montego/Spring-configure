@@ -18,5 +18,16 @@ public class Fight extends AbstractEntity {
     private String result;
     @OneToOne
     private Bonus bonus;
+//    @Enumerated(EnumType.STRING)
+//    private Battlefield battlefield;
+    @OneToOne
+    private Battlefield battlefield;
 
+    public Fight(){}
+
+    public  Fight(Character char1, Character char2,Battlefield battlefield){
+        this.char1 = char1;
+        this.char2 = char2;
+        this.battlefield = battlefield;
+    }
 }

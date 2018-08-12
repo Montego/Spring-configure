@@ -31,6 +31,7 @@ public class Run {
         ArmorService armorService = context.getBean(ArmorService.class);
         WeaponService weaponService = context.getBean(WeaponService.class);
         RaceService raceService = context.getBean(RaceService.class);
+        //BattlefieldService battlefieldService = context.getBean(BattlefieldService.class);
 
         Password password1 = new Password();
         password1.setPassword("Password1");
@@ -39,23 +40,17 @@ public class Run {
         password2.setPassword("Password2");
         passwordService.addPassword(password2);
 
-        Authority adminRole = new Authority();
-        adminRole.setAuthority("ADMIN");
-        authorityService.addAuthority(adminRole);
-        authorityService.getAuthority(adminRole);
-
+//        Authority adminRole = new Authority();
+//        adminRole.setAuthority("ADMIN");
+//        authorityService.addAuthority(adminRole);
         Authority userRole = new Authority();
-        userRole.setAuthority("USER");
+        userRole.setAuthority("ROLE_USER");
         authorityService.addAuthority(userRole);
 
         User user1 = new User("User1", password1);
-//        user.setLogin("lsdkfjldskjfl");
-//        user.setPassword(password);
-        user1.setRole(userRole);
         userService.addUser(user1);
 
         User user2 = new User("User2", password2);
-        user2.setRole(userRole);
         userService.addUser(user2);
 
         Weapon weapon1 = new Weapon(20, SWORD, "SWORD");
@@ -81,7 +76,7 @@ public class Run {
         Armor headArmor4 = new Armor(10, HEAD, "шлем4");
         Armor bodyArmor4 = new Armor(10, BODY, "доспех4");
         Armor legsArmor4 = new Armor(1, LEGS, "поножи4");
-        ArrayList<Armor> armors1 = new ArrayList<Armor>();
+        List<Armor> armors1 = new ArrayList<Armor>();
         ArrayList<Armor> armors2 = new ArrayList<Armor>();
         ArrayList<Armor> armors3 = new ArrayList<Armor>();
         ArrayList<Armor> armors4 = new ArrayList<Armor>();

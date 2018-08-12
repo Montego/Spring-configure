@@ -36,4 +36,8 @@ public class CharacterService implements ICharacterService {
     public void deleteCharacter(String name) {
 
     }
+    @Override
+    public Character getOneCharacter(Long id) {
+        return characterRepository.findById(id).orElse(null);
+    }
 }

@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface ArmorRepository extends JpaRepository<Armor, Long>{
     Armor findByName(String name);
-    List<Armor> findByTypeArmor(TypeArmor typeArmor);
+    List<Armor> findByTypeArmor(Enum typeArmor);
 }
