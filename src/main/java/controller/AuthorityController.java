@@ -6,20 +6,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import service.impl.AuthorityService;
+import service.IAuthorityService;
 
 @RestController
 @RequestMapping("authority")
 public class AuthorityController {
 
-    private final AuthorityService authorityService;
+    private final IAuthorityService authorityService;
 
     @Autowired
-    public AuthorityController(AuthorityService authorityService) {
+    public AuthorityController(IAuthorityService authorityService) {
         this.authorityService = authorityService;
     }
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ResponseEntity<?> getAll(){
-        return new ResponseEntity<>(authorityService.getAllRoles(),HttpStatus.OK);
+    public ResponseEntity<?> getAll() {
+        return new ResponseEntity<>(authorityService.getAllRoles(), HttpStatus.OK);
     }
 }

@@ -5,16 +5,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.impl.CharacterService;
+import service.ICharacterService;
 
 @RestController
 @RequestMapping("character")
 public class CharacterController {
 
-    private final CharacterService characterService;
+    private final ICharacterService characterService;
 
     @Autowired
-    public CharacterController(CharacterService characterService) {
+    public CharacterController(ICharacterService characterService) {
         this.characterService = characterService;
 
     }

@@ -7,17 +7,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import service.impl.RaceService;
+import service.IRaceService;
 
 @RestController
 @RequestMapping("race")
 public class RaceController {
-    private final RaceService raceService;
+    private final IRaceService raceService;
 
     @Autowired
-    public RaceController(RaceService raceService) {
+    public RaceController(IRaceService raceService) {
         this.raceService = raceService;
     }
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ResponseEntity<?> getAllRaces() {
         return new ResponseEntity<>(raceService.getAllRaces(), HttpStatus.OK);

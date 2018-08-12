@@ -8,15 +8,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import service.IWeaponService;
 import service.impl.WeaponService;
 
 @RestController
 @RequestMapping("weapon")
 public class WeaponController {
-    private final WeaponService weaponService;
+    private final IWeaponService weaponService;
 
     @Autowired
-    public WeaponController(WeaponService weaponService) {
+    public WeaponController(IWeaponService weaponService) {
         this.weaponService = weaponService;
 
     }
