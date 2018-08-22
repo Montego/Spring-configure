@@ -19,11 +19,11 @@ public class BonusService implements IBonusService {
         this.bonusRepository = bonusRepository;
 
     }
-    @Override
+
     public Bonus getBonus(Bonus bonus) {
         return bonusRepository.getOne(bonus.getId());               //переделать
     }
-    @Override
+
     public Bonus calculateBonus(Character character, Battlefield battlefield) {
         Race ch = character.getRace();
         String bf = battlefield.toString();

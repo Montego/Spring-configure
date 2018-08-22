@@ -15,6 +15,7 @@ public class FightService implements IFightService {
 
     private FightRepository fightRepository;
 
+
     @Autowired
     public FightService(FightRepository fightRepository) {
         this.fightRepository = fightRepository;
@@ -22,7 +23,6 @@ public class FightService implements IFightService {
 
     @Override
     public String fight(Character char1, Character char2) {
-
         int powerChar1 = getCharDamage(char1) + getArmorDefence(char1) + getCharAttack(char1) + getCharDefence(char1) + getNonDamage(char1);
         int powerChar2 = getCharDamage(char2) + getArmorDefence(char2) + getCharAttack(char2) + getCharDefence(char2) + getNonDamage(char2);
 

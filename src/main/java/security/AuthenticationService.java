@@ -8,29 +8,25 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import service.IPasswordService;
 import service.IUserService;
-import service.impl.UserService;
-
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AuthenticationService implements IAuthenticationService{
+public class AuthenticationService implements IAuthenticationService {
 
-    private  IUserService userService;
-    private  IPasswordService passwordService;
+    private IUserService userService;
+    private IPasswordService passwordService;
 
     @Autowired
-    public AuthenticationService(IUserService userService, IPasswordService passwordService){
+    public AuthenticationService(IUserService userService, IPasswordService passwordService) {
         this.userService = userService;
         this.passwordService = passwordService;
     }
 
-    @Override
-    public  String generateToken(String username, Password password) {
+    public String generateToken(String username, Password password) {
         if (username == null || password == null)
             return null;
         User user = new User();
-        Map<String, Object> tokenData = new HashMap<>();
+        Map<String, Object> tokenData = new HashMap<String, Object>();
 
         if (password.equals(user.getPassword())) {
             tokenData.put("clientType", user.getRole());

@@ -16,12 +16,12 @@ public class BattlefieldService implements IBattlefieldService {
         this.battlefieldRepository = battlefieldRepository;
     }
 
-    @Override
+
     public Battlefield getBattlefield(String battlefield) {
         return battlefieldRepository.findByName(battlefield);
     }
 
-    @Override
+
     public List<Battlefield> getAllBattlefield() {
         return battlefieldRepository.findAll();
     }
