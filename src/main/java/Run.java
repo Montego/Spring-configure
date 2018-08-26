@@ -2,6 +2,8 @@ import entity.*;
 import entity.Character;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.security.core.Authentication;
+import security.AuthenticationService;
 import service.impl.*;
 
 import java.util.ArrayList;
@@ -31,6 +33,8 @@ public class Run {
         ArmorService armorService = context.getBean(ArmorService.class);
         WeaponService weaponService = context.getBean(WeaponService.class);
         RaceService raceService = context.getBean(RaceService.class);
+        AuthenticationService authenticationService = context.getBean(AuthenticationService.class);
+
         //BattlefieldService battlefieldService = context.getBean(BattlefieldService.class);
 
         Password password1 = new Password();
@@ -146,6 +150,10 @@ public class Run {
         characterService.addCharacter(character3);
         Character character4 = new Character("CHARACTER №4", user2, armors4, weapon4, elf);
         characterService.addCharacter(character4);
+
+        String token = authenticationService.generateToken(user1.getLogin(), user1.getPassword().getPassword());
+        Authentication authentication = authenticationService.getAuthentication(token);
+        System.out.println(authentication);
 
         log.info("Aplication stop");
 
