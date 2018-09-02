@@ -15,7 +15,6 @@ public class FightService implements IFightService {
 
     private FightRepository fightRepository;
 
-
     @Autowired
     public FightService(FightRepository fightRepository) {
         this.fightRepository = fightRepository;
@@ -26,7 +25,7 @@ public class FightService implements IFightService {
         int powerChar1 = getCharDamage(char1) + getArmorDefence(char1) + getCharAttack(char1) + getCharDefence(char1) + getNonDamage(char1);
         int powerChar2 = getCharDamage(char2) + getArmorDefence(char2) + getCharAttack(char2) + getCharDefence(char2) + getNonDamage(char2);
 
-        String messageTemplate = "%s Победил!\n%s сильнне на : %d очков";
+        String messageTemplate = "%s Победил!\n%s сильнее на : %d очков";
         String winnerName = powerChar1 > powerChar2 ? char1.getName() : char2.getName();
 
         return String.format(messageTemplate, winnerName, winnerName, powerChar1 - powerChar2);

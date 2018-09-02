@@ -12,19 +12,16 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-public class TokerFilter extends GenericFilterBean {
+public class TokenFilter extends GenericFilterBean {
 
     private IAuthenticationService authenticationService;
 
     @Autowired
-    public TokerFilter(IAuthenticationService authenticationService) {
+    public TokenFilter(IAuthenticationService authenticationService) {
         authenticationService = this.authenticationService;
     }
 
-    public void doFilter(
-            ServletRequest request,
-            ServletResponse response,
-            FilterChain chain) throws IOException, ServletException {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         Authentication authentication = authenticationService.getAuthentication((HttpServletRequest) request);
         SecurityContextHolder.getContext().setAuthentication(authentication);
         chain.doFilter(request, response);
