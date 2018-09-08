@@ -2,8 +2,6 @@ package entity;
 
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -26,7 +24,6 @@ public class User extends AbstractEntity {
 
     @Column
     private Timestamp registrated;
-
 
 
     public User(String login, Password password) {

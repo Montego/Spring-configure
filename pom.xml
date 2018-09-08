@@ -108,8 +108,8 @@
                     <goal>war</goal>
                 </goals>
                 <configuration>
-                <webappDirectory>target</webappDirectory>
-            </configuration>
+                    <webappDirectory>target</webappDirectory>
+                </configuration>
             </plugin>
         </plugins>
     </build>

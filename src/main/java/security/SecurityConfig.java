@@ -72,11 +72,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     //Второй вариант configure
 //    @Override
 //    protected void configure(HttpSecurity http) throws Exception {
-//
 //        http.exceptionHandling().accessDeniedHandler(new AccessDeniedHandlerImpl() {
 //            @Override
-//            public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException{
-//                super.handle(request, response, accessDeniedException);
+//            public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException {
+//                super.handle(request,response,accessDeniedException);
 //                accessDeniedException.printStackTrace();
 //            }
 //        });
