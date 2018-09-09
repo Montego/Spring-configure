@@ -94,22 +94,28 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                <!--<version>3.8.0</version>-->
 
-            </plugin>
+            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.1.0</version>
-                <goals>
-                    <goal>war</goal>
-                </goals>
-                <configuration>
-                    <webappDirectory>target</webappDirectory>
-                </configuration>
+                <!--<goals>-->
+                    <!--<goal>war</goal>-->
+                <!--</goals>-->
+                <!--<configuration>-->
+                    <!--<webResources>-->
+                        <!--<resource>-->
+                            <!--&lt;!&ndash; this is relative to the pom.xml directory &ndash;&gt;-->
+                            <!--<directory>src/main/webapp/WEB-INF</directory>-->
+                        <!--</resource>-->
+                    <!--</webResources>-->
+                    <!--&lt;!&ndash;<webappDirectory>target/WEB-INF</webappDirectory>&ndash;&gt;-->
+                <!--</configuration>-->
             </plugin>
         </plugins>
     </build>
