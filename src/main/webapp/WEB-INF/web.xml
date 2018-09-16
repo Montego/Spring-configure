@@ -26,7 +26,7 @@
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
 
-    <listener>
+       <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class><!-- use only if you want to load other Spring context xml files as well while loading the app and you can specify them as  -->
     </listener>
 

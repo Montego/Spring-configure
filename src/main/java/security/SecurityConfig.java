@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/user", "/index", "/about").permitAll()
+                .antMatchers("/", "/user","/login").permitAll()
                 .antMatchers("/admin/**").hasAnyRole("ADMIN")
                 .antMatchers("/user/**").hasAnyRole("USER")
                 .anyRequest().authenticated()
@@ -43,31 +43,31 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
         //TODO доделать форму логина и логаута
-        http.formLogin()
-                // указываем страницу с формой логина
-                .loginPage("/login")
-                // указываем action с формы логина
-                .loginProcessingUrl("/j_spring_security_check")
-                // указываем URL при неудачном логине
-                .failureUrl("/login?error")
-                // Указываем параметры логина и пароля с формы логина
-                .usernameParameter("j_username")
-                .passwordParameter("j_password")
-                // даем доступ к форме логина всем
-                .permitAll();
-
-        http.logout()
-                // разрешаем делать логаут всем
-                .permitAll()
-                // указываем URL логаута
-                .logoutUrl("/logout")
-                // указываем URL при удачном логауте
-                .logoutSuccessUrl("/login?logout")
-                // делаем не валидной текущую сессию
-                .invalidateHttpSession(true);
+//        http.formLogin()
+//                // указываем страницу с формой логина
+//                .loginPage("/login")
+//                // указываем action с формы логина
+//                .loginProcessingUrl("/j_spring_security_check")
+//                // указываем URL при неудачном логине
+//                .failureUrl("/login?error")
+//                // Указываем параметры логина и пароля с формы логина
+//                .usernameParameter("j_username")
+//                .passwordParameter("j_password")
+//                // даем доступ к форме логина всем
+//                .permitAll();
+//
+//        http.logout()
+//                // разрешаем делать логаут всем
+//                .permitAll()
+//                // указываем URL логаута
+//                .logoutUrl("/logout")
+//                // указываем URL при удачном логауте
+//                .logoutSuccessUrl("/login?logout")
+//                // делаем не валидной текущую сессию
+//                .invalidateHttpSession(true);
     }
 
-    //Второй вариант configure
+//    Второй вариант configure
 //    @Override
 //    protected void configure(HttpSecurity http) throws Exception {
 //        http.exceptionHandling().accessDeniedHandler(new AccessDeniedHandlerImpl() {

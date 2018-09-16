@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class IndexController {
-    @RequestMapping("/test")
+    @RequestMapping("/login")
     public String getIndexPage() {
-        return "test.html";
+        return "static/html/index.html";
     }
 }
